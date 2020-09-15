@@ -4,15 +4,15 @@
 #include <time.h>
 #include <string.h>
 #include <cctype>
-int checkprevious(int used, char** p);
+int checkprevious(int used, char** p);     //<<<<<Function
 void convertolow(char *temp);
 int main()
 {
-	char vowel[5] = {'a','e','i','o','u'};
-	char *temp=(char*)malloc(15*sizeof(char));	
+	char vowel[5] = {'a','e','i','o','u'};       // Array
+	char *temp=(char*)malloc(15*sizeof(char));	// Pointer
 	int escape=0,used=0;
 	double score=0;
-	time_t t;
+	time_t t;					
 	srand((unsigned)time(&t));
 	int r = rand() % 25,c = 'a' + r,n;
 	printf("How many words do you wanna play? : ");
@@ -22,16 +22,16 @@ int main()
 		printf("\nAre you kidding me?\n");
 		return 0;
 	}
-	char** str;
+	char** str;								// Pointer
 	str = (char**)malloc(n*sizeof(str));
-	for (int i = 0; i < n; i++)
+	for (int i = 0; i < n; i++)					// Loop
 	{
 		str[i] = (char*)malloc(15*sizeof(char));
 	}
 	printf("Start with : %c\n", c);
-	for (int i = 0; i < n; i++)
+	for (int i = 0; i < n; i++)						//Loop
 	{
-		if(i==0)
+		if(i==0)								//Nested if
 		{
 			scanf("%s", temp);
 			convertolow(temp);
@@ -79,7 +79,7 @@ int main()
 			score += 100;
 			memset(temp, 0, 15);
 		}
-		for (int j = 0; j < 15; j++)
+		for (int j = 0; j < 15; j++)					// Nested loop
 		{
 			for (int k = 0; k < 5; k++)
 			{
